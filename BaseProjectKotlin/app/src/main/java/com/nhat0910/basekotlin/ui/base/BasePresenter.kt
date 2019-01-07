@@ -6,12 +6,12 @@ import io.reactivex.disposables.Disposable
 /*
  * Created by NhatHoang on 28/12/2018.
  */
-class BasePresenter<V : MvpView> : IPresenter<V> {
+class BasePresenter<V : MvpView>() : IPresenter<V> {
 
     private var view: V? = null
     private var compositeDisposable: CompositeDisposable
 
-    constructor(){
+    init {
         this.compositeDisposable = CompositeDisposable()
     }
 
